@@ -1,0 +1,27 @@
+$main-font: "Trueno", sans-serif;
+
+$side-indent: 1rem;
+$max-width: calc(1220px + #{$side-indent * 2});
+
+$root-fz: 16px;
+
+$retina-bg-path: '../images/bg/';
+$retina-dpr: (1.5, 2, 3);
+
+$color-black: #1d1c1d;
+$color-white: #ffffff;
+
+$color-gray: #8a8784;
+$color-coral: #ff7373;
+$color-beige: #dcc5b8;
+$color-burgundy: #623232;
+$color-burgundy-dark: #472424;
+
+
+$desktop-l: 1580px;
+$desktop-m: 1366px;
+$desktop-s: 1280px;
+$tablet-l: 1024px;
+$tablet-m: 768px;
+$mobile-m: 640px;
+$mobile-s: 480px;

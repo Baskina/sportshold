@@ -1,0 +1,501 @@
+.main-wrapper {
+  //max-width: 1680px;
+  //margin-left: auto;
+  //margin-right: auto;
+}
+
+.wrapper {
+  max-width: 1110px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: content-box;
+}
+
+///comp hedaer start
+
+.header {
+  color: $color-white;
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+    position: relative;
+    align-items: center;
+
+    @media (min-width: $tablet-m) {
+      align-items: stretch;
+    }
+  }
+
+  &__menu-wrap {
+    display: none;
+
+    @media (min-width: $tablet-m) {
+      display: block;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 100%;
+    margin-left: -1vw;
+    margin-right: -1vw;
+  }
+
+  &__menu-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+
+  &__menu-link {
+    text-align: center;
+    max-width: 200px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  &_main {
+    background-color: $color-burgundy-dark;
+    font-size: .8rem;
+
+    .header__menu-item {
+      transition: background-color .3s;
+
+      &:hover, &:focus {
+        background-color: $color-coral;
+        outline: none;
+      }
+    }
+  }
+
+  &_categories {
+    background-color: $color-burgundy;
+
+    .header__menu-item {
+      transition: color .3s;
+      position: relative;
+      border-bottom: 4px solid transparent;
+      box-sizing: content-box;
+
+      &:hover, &:focus {
+        color: $color-coral;
+        outline: none;
+        border-bottom: 4px solid $color-coral;
+      }
+
+      &_active {
+        color: $color-coral;
+        border-bottom: 4px solid $color-coral;
+      }
+    }
+
+    .header__menu-link {
+
+    }
+  }
+}
+
+//comp header end
+
+//logo start
+.logo {
+  padding-top: 20px;
+  padding-bottom: 30px;
+  display: flex;
+  align-items: center;
+
+  &__image {
+    display: block;
+  }
+}
+
+//logo end
+
+.user-info {
+  display: flex;
+  align-items: stretch;
+}
+
+.basket {
+  display: flex;
+  align-items: center;
+  padding-right: 15px;
+  padding-left: 15px;
+  transition: background-color .3s;
+
+  &:hover, &:focus {
+    background-color: $color-burgundy;
+    outline: none;
+
+    .basket__items {
+      color: $color-white;
+    }
+  }
+
+  &__ico {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  &__total-cost {
+    display: none;
+
+    @media (min-width: $mobile-m) {
+      display: inline;
+    }
+  }
+
+  &__items {
+    color: $color-beige;
+    margin-right: 10px;
+    margin-left: 10px;
+    text-align: center;
+    transition: color .3s;
+    display: none;
+
+    @media (min-width: $mobile-m) {
+      display: inline;
+    }
+  }
+}
+
+.entrance {
+  display: flex;
+  align-items: stretch;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background-color: $color-burgundy;
+  }
+
+  &__login {
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: background-color .3s;
+
+    &:hover, &:focus {
+      background-color: $color-burgundy;
+      outline: none;
+    }
+  }
+
+  &__register {
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: $color-coral;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    &:hover, &:focus {
+      background-color: $color-burgundy;
+      outline: none;
+    }
+  }
+}
+
+/////component jumbotron
+
+.jumbotron {
+  background-color: beige;
+  position: relative;
+
+  &__wrap {
+    display: flex;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    flex-direction: row-reverse;
+
+    @media (min-width: $tablet-l) {
+      padding-top: 8em;
+      padding-bottom: 8em;
+    }
+  }
+}
+
+.product-images {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(71, 36, 36, .5), rgba(71, 36, 36, .5)), url("../images/snickers.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  z-index: 0;
+
+  @media (min-width: $mobile-s) {
+    width: 50%;
+    background-image: url("../images/snickers.png");
+  }
+
+  @media (min-width: $desktop-l) {
+    width: 100%;
+    height: 120%;
+    background-size: 870px;
+    top: -20%;
+  }
+}
+
+.product-info {
+  z-index: 1;
+  flex-basis: 100%;
+
+  @media (min-width: $mobile-s) {
+    flex-basis: 50%;
+  }
+
+  &__description {
+    max-width: 20em;
+
+    @media (min-width: $mobile-m) {
+      max-width: 25em;
+    }
+  }
+}
+
+/////end componne jumb
+
+//start comp ad
+.blurb {
+  margin-top: 3.5vh;
+  margin-bottom: 5.5vh;
+
+  &__wrap {
+
+    @media (min-width: $mobile-m) {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: -15px;
+      margin-right: -15px;
+    }
+  }
+
+  &__item {
+
+    @media (min-width: $mobile-m) {
+      flex: 1 1 300px;
+      margin-left: 15px;
+      margin-right: 15px;
+      margin-bottom: 0;
+    }
+
+    &_small {
+
+      @media (min-width: $mobile-m) {
+        flex: 1 1 200px;
+      }
+    }
+  }
+}
+
+.product-content {
+  margin-bottom: 30px;
+}
+
+//end comp ad
+
+//start comp cards
+.cards {
+  margin-bottom: 7vh;
+
+  &__body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: -15px;
+    margin-right: -15px;
+
+    @media (min-width: $desktop-m) {
+      justify-content: flex-start;
+    }
+  }
+}
+
+.card {
+  flex: 1 1 255px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 30px;
+  max-width: 255px;
+}
+
+.filter {
+  font-size: 1rem;
+  font-weight: 300;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-transform: uppercase;
+  margin-bottom: 2vh;
+
+  @media (min-width: $mobile-m) {
+    font-size: 1.85rem;
+  }
+
+  &__item {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+//end comp cards
+
+//start comp brands
+.brands {
+  margin-bottom: 7vh;
+
+  &__wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    flex: 1 0 auto;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+  }
+
+  &__image {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+}
+
+//end comp brands
+
+//start news
+.news {
+  margin-bottom: 7vh;
+
+  &__title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.85rem;
+    font-weight: 700;
+    margin-bottom: 3.5vh;
+  }
+
+  &__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  &__item {
+    flex: 0 1 350px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 30px;
+  }
+}
+
+//end news
+
+//cta start
+.cta {
+  margin-bottom: 7vh;
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__help {
+    display: flex;
+    align-items: center;
+  }
+
+  &__text {
+    margin-right: 15px;
+    margin-bottom: 30px;
+    max-width: 30em;
+  }
+}
+
+//cta end
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: transform .2s linear;
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+
+  @media (min-width: $tablet-m) {
+    display: none;
+  }
+
+  &__line {
+    position: absolute;
+    width: 1em;
+    height: 2px;
+    background-color: white;
+    transition: all .2s linear;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &:first-child {
+      transform: translateY(-50%) translateY(-.35em);
+    }
+
+    &:last-child {
+      transform: translateY(-50%) translateY(.35em);
+    }
+  }
+
+  &_open {
+    transform: rotate(135deg);
+
+    .burger__line {
+      &:first-child {
+        margin-top: 0;
+        transform: translateY(-50%) rotate(90deg);
+      }
+
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+
+  &:hover, &:focus {
+    outline: none;
+
+    .burger__line {
+      background-color: grey;
+    }
+  }
+}
+

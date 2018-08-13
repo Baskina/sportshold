@@ -1,0 +1,16 @@
+.button {
+  padding: 15px 30px;
+  text-transform: uppercase;
+  display: inline-block;
+  color: $color-white;
+  line-height: 1.6;
+  font-weight: 700;
+
+  &_color_coral {
+    background-color: $color-coral;
+  }
+
+  &_color_burgundy {
+    background-color: $color-burgundy;
+  }
+}

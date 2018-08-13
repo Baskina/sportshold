@@ -1,0 +1,29 @@
+@mixin retina-bg($image-name, $format, $bg-size: null, $dprValues: $retina-dpr) {
+
+  background-image: url("#{$retina-bg-path}#{$image-name}.#{$format}");
+  background-size: $bg-size;
+
+  @each $dpr in $dprValues {
+
+    @media only screen and (-webkit-min-device-pixel-ratio: $dpr),
+    only screen and (min--moz-device-pixel-ratio: $dpr),
+    only screen and (min-device-pixel-ratio: $dpr),
+    only screen and (min-resolution: #{$dpr}dppx),
+    only screen and (min-resolution: #{$dpr * 96}dpi){
+      background-image: url("#{$retina-bg-path}#{$image-name}@#{$dpr}x.#{$format}");
+    }
+
+  }
+}
+
+.max-width_centered {
+  max-width: $max-width;
+  padding-left: $side-indent;
+  padding-right: $side-indent;
+  margin: auto;
+
+  @supports (padding: max(0)) {
+    padding-left: unquote('max(#{$side-indent}, env(safe-area-inset-left))');
+    padding-right: unquote('max(#{$side-indent}, env(safe-area-inset-right))');
+  }
+}
